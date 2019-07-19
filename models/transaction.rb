@@ -14,6 +14,7 @@ class Transaction
     @value = options['value'].to_i
   end
 
+#CREATE
   def save()
     sql = "INSERT INTO transactions
     (tag_id, merchant_id, value)
@@ -25,10 +26,26 @@ class Transaction
     @id = transaction.first()['id'].to_i
   end
 
-
+#DELETE
   def self.delete_all()
     sql = "DELETE FROM transactions"
     SqlRunner.run( sql )
   end
+
+#DELETE
+  def self.delete(id)
+    sql = "DELETE FROM transactions WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
+#READ
+  def self.all()
+    sql = "SELECT * FROM transactions"
+    transactions = SqlRunner.run(sql)
+    result = transactions.map{ |transaction| Transaction.new(transaction)}
+    return result
+  end
+
 
 end

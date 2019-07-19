@@ -27,4 +27,21 @@ class Tag
     SqlRunner.run( sql )
   end
 
+
+  def self.delete(id)
+    sql = "DELETE FROM tags WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
+
+  def self.all()
+    sql = "SELECT * FROM tags"
+    tags = SqlRunner.run(sql)
+    result = tags.map{ |tag|
+    Tag.new(tag)}
+    return result
+  end
+
+
 end
