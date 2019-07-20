@@ -3,6 +3,8 @@ require('sinatra/reloader')
 require('pry-byebug')
 
 require_relative('./models/transaction.rb')
+require_relative('./models/tag.rb')
+require_relative('./models/merchant.rb')
 also_reload('./models/*')
 
 #INDEX

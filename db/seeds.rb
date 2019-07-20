@@ -23,14 +23,16 @@ tag1.save()
 transaction1 = Transaction.new({
   'tag_id' => tag1.id,
   'merchant_id' => merchant1.id,
-  'value' => 20
+  'value' => 20,
+  'details' => 'Purchased DVD'
 })
 transaction1.save()
 
 transaction2 = Transaction.new({
   'tag_id' => tag1.id,
   'merchant_id' => merchant1.id,
-  'value' => 20
+  'value' => 50,
+  'details' => 'Purchased hifi'
 })
 transaction2.save()
 
