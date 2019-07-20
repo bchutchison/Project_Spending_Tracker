@@ -1,7 +1,6 @@
 <% @transactions.each do |transaction| %>
-<p>Transaction ID : <%= transaction.id %></p>
-<p>Merchant : <%= transaction.merchant_id %></p>
-<p>Category : <%= transaction.tag_id %></p>
+<p>Merchant : <%= transaction.merchant.name %></p>
+<p>Category : <%= transaction.tag.name %></p>
 <p>Total value : <%= transaction.value %></p>
 <p><a href="/transactions/<%= transaction.id %>">Show Transaction Detail</a></p>
 <hr>

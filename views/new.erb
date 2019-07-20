@@ -1,0 +1,39 @@
+<h2>Input New Transaction</h2>
+<form action="/transactions" method="post">
+<div class="form-wrapper">
+
+<div class="form-element">
+  <label for="merchant_choice">Merchant :</label>
+  <select name="merchant_id" id="merchant_choice">
+    <% @merchants.each do |merchant| %>
+      <option value=<%= merchant.id %>><%= merchant.name.capitalize %></option>
+    <% end %>
+  </select>
+</div>
+
+<div class="form-element">
+  <label for="tag_choice">Category :</label>
+  <select name="tag_id" id="tag_choice">
+    <% @tags.each do |tag| %>
+      <option value=<%= tag.id %>><%= tag.name.capitalize %></option>
+    <% end %>
+  </select>
+</div>
+
+<div class="form-element">
+  <label for="value">Value :</label>
+  <input type="text" name="value" id="value">
+</div>
+
+<div class="form-element">
+  <label for="details">Purchase Details :</label>
+  <input type="text" name="details" id="details">
+</div>
+
+<div class="button-element">
+  <input type="submit" value="Save Transaction">
+</div>
+
+
+</div>
+</form>

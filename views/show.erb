@@ -1,7 +1,19 @@
 <p>Transaction ID : <%= @transaction.id %></p>
-<p>Merchant : <%= @transaction.merchant_id %></p>
-<p>Category : <%= @transaction.tag_id %></p>
+<p>Merchant : <%= @transaction.merchant.name %></p>
+<p>Category : <%= @transaction.tag.name %></p>
 <p>Total value : <%= @transaction.value %></p>
-<p>Transaction ID : <%= @transaction.id %></p>
-<p>Transaction details : <%= @transaction.details %></p>
+<p>Purchase Details : <%= @transaction.details %></p>
+
+<div class="button_element">
+  <button type="button" name="button"><a href="/transactions/<%= @transaction.id %>/edit">Edit</a></button>
+</div>
+
+<div class="button_element">
+  <form action="/transactions/<%= @transaction.id %>/delete" method="post"><input type="submit" value="Delete"></form>
+</div>
+
+<div class="button_element">
+  <button type="button" name="button"><a href="/transactions">Back</a></button>
+</div>
+
 <hr>

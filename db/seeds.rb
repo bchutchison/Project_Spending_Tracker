@@ -8,16 +8,24 @@ Tag.delete_all()
 Merchant.delete_all()
 
 
-merchant1 = Merchant.new({
-  'name' => 'Amazon'
-})
+merchant1 = Merchant.new({'name' => 'Amazon'})
 merchant1.save()
 
+merchant2 = Merchant.new({'name' => 'Tesco'})
+merchant2.save()
 
-tag1 = Tag.new({
-  'name' => 'Entertainment'
-})
+merchant3 = Merchant.new({'name' => 'Asda'})
+merchant3.save()
+
+merchant4 = Merchant.new({'name' => 'Ebay'})
+merchant4.save()
+
+
+tag1 = Tag.new({'name' => 'Entertainment'})
 tag1.save()
+
+tag2 = Tag.new({'name' => 'Groceries'})
+tag2.save()
 
 
 transaction1 = Transaction.new({
