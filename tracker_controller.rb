@@ -10,3 +10,9 @@ get '/transactions' do
   @transactions = Transaction.all()
   erb(:index)
 end
+
+#SHOW
+get '/transactions/:id' do
+  @transaction = Transaction.find(params[:id])
+  erb(:show)
+end
