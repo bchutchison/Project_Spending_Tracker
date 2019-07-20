@@ -29,6 +29,30 @@ post '/transactions' do
 end
 
 
+#NEW MERCHANT
+get '/transactions/new-merchant' do
+  @merchants = Merchant.all
+  erb(:new_merchant)
+end
+
+post '/transactions/merchant' do
+  Merchant.new(params).save
+  redirect to '/transactions'
+end
+
+
+#NEW TAG
+get '/transactions/new-tag' do
+  @tags = Tag.all
+  erb(:new_tag)
+end
+
+post '/transactions/tag' do
+  Tag.new(params).save
+  redirect to '/transactions'
+end
+
+
 #EDIT
 get '/transactions/:id/edit' do
   @tags = Tag.all

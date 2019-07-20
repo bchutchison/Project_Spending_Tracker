@@ -1,18 +1,46 @@
 <h2>Modify Transaction Information</h2>
-<form class="" action="index.html" method="post">
+<form action="/transactions/<%= @transactions.id %>" method="post">
   <div class="form-wrapper">
 
     <div class="form-element">
-      
+      <label for="merchant_choice">Merchant :</label>
+      <select name="merchant_id" id="merchant_choice" value="<%= @transactions.merchant.name %>">
+        <% @merchants.each do |merchant| %>
+          <% if merchant.id == @transactions.merchant_id %>
+            <option value=<%= merchant.id %> selected><%= merchant.name.capitalize %></option>
+          <% else %>
+            <option value=<%= merchant.id %>><%= merchant.name.capitalize %></option>
+          <% end %>
+        <% end %>
+      </select>
     </div>
 
+    <div class="form-element">
+      <label for="tag_choice">Category :</label>
+      <select name="tag_id" id="tag_choice" value="<%= @transactions.tag.name %>">
+        <% @tags.each do |tag| %>
+          <% if tag.id == @transactions.tag_id %>
+            <option value=<%= tag.id %> selected><%= tag.name.capitalize %></option>
+          <% else %>
+            <option value=<%= tag.id %>><%= tag.name.capitalize %></option>
+          <% end %>
+        <% end %>
+      </select>
+    </div>
 
+    <div class="form-element">
+      <label for="value">Value :</label>
+      <input type="text" name="value" id="value" value="<%= @transactions.value %>">
+    </div>
 
+    <div class="form-element">
+      <label for="details">Purchase Details :</label>
+      <input type="text" name="details" id="details" value="<%= @transactions.details %>">
+    </div>
 
-
-
-
-
+    <div class="button-element">
+      <input type="submit" value="Save Changes">
+    </div>
 
   </div>
 </form>
