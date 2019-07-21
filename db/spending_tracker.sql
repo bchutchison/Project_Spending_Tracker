@@ -17,5 +17,6 @@ CREATE TABLE transactions (
   value INT4,
   tag_id INT4 REFERENCES tags(id) ON DELETE CASCADE,
   merchant_id INT4 REFERENCES merchants(id) ON DELETE CASCADE,
-  details TEXT
+  details TEXT,
+  order_date DATE
 );

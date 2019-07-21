@@ -1,8 +1,10 @@
-<p>Transaction ID : <%= @transaction.id %></p>
+
 <p>Merchant : <%= @transaction.merchant.name %></p>
 <p>Category : <%= @transaction.tag.name %></p>
 <p>Total value : <%= @transaction.value %></p>
 <p>Purchase Details : <%= @transaction.details %></p>
+<p>Purchase Date : <%= @transaction.order_date %></p>
+<p>Transaction ID : <%= @transaction.id %></p>
 
 <div class="button_element">
   <button type="button" name="button"><a href="/transactions/<%= @transaction.id %>/edit">Edit</a></button>

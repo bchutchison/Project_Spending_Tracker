@@ -4,6 +4,7 @@
 <p>Merchant : <%= transaction.merchant.name %></p>
 <p>Category : <%= transaction.tag.name %></p>
 <p>Total value : £<%= transaction.value %></p>
+<p>Total value : <%= transaction.order_date %></p>
 <% total += transaction.value %>
 <p><a href="/transactions/<%= transaction.id %>">Show Detail</a></p>
 <hr>

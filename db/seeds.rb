@@ -32,7 +32,8 @@ transaction1 = Transaction.new({
   'tag_id' => tag1.id,
   'merchant_id' => merchant1.id,
   'value' => 20,
-  'details' => 'Purchased DVD'
+  'details' => 'Purchased DVD',
+  'order_date' => 20190621
 })
 transaction1.save()
 
@@ -40,7 +41,8 @@ transaction2 = Transaction.new({
   'tag_id' => tag1.id,
   'merchant_id' => merchant1.id,
   'value' => 50,
-  'details' => 'Purchased hifi'
+  'details' => 'Purchased hifi',
+  'order_date' => 20190621
 })
 transaction2.save()
 
