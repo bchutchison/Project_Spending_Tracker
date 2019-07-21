@@ -6,7 +6,7 @@
 </div>
 
 <div class="button_element">
-  <form action="/transactions/<%= merchant.id %>/delete-merchant" method="post"><input type="submit" value="Delete"></form>
+  <form onsubmit="return confirm('Are you sure you want to delete this merchant?')" action="/transactions/<%= merchant.id %>/delete-merchant" method="post"><input type="submit" value="Delete"></form>
 </div>
 
 

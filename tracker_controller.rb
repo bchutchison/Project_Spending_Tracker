@@ -49,7 +49,7 @@ end
 
 post '/transactions/merchant' do
   Merchant.new(params).save
-  redirect to '/transactions'
+  redirect to '/transactions/new-merchant'
 end
 
 #NEW TAG
@@ -60,7 +60,7 @@ end
 
 post '/transactions/tag' do
   Tag.new(params).save
-  redirect to '/transactions'
+  redirect to '/transactions/new-tag'
 end
 
 
@@ -85,7 +85,7 @@ end
 post '/transactions/:id/change-merchant' do
   merchant = Merchant.new(params)
   merchant.update
-  redirect to "/transactions"
+  redirect to "/transactions/merchants"
 end
 
 #EDIT TAG
@@ -96,7 +96,7 @@ end
 post '/transactions/:id/change-tag' do
   tag = Tag.new(params)
   tag.update
-  redirect to "/transactions"
+  redirect to "/transactions/tags"
 end
 
 
@@ -110,13 +110,13 @@ end
 #DELETE MERCHANT
 post '/transactions/:id/delete-merchant' do
   Merchant.delete(params['id'])
-  redirect to '/transactions'
+  redirect to '/transactions/merchants'
 end
 
 #DELETE TAG
 post '/transactions/:id/delete-tag' do
   Tag.delete(params['id'])
-  redirect to '/transactions'
+  redirect to '/transactions/tags'
 end
 
 
