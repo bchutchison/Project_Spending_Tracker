@@ -61,6 +61,21 @@ get '/transactions/:id/edit' do
   erb(:edit)
 end
 
+# EDIT TAGS
+get '/transactions/edit-tags' do
+  @tags = Tag.all
+  erb(:edit_tags)
+end
+
+#EDIT MERCHANTS
+get '/transactions/edit-merchants' do
+  @merchants = Merchant.all
+  erb(:edit_merchants)
+end
+
+
+
+
 post '/transactions/:id' do
   transaction = Transaction.new(params)
   transaction.update

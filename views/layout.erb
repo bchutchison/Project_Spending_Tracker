@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="utf-8">
   <title>Spending Tracker</title>
 </head>
+
 <body>
-  <h1>Money Spending Tracker</h1>
-  <nav>
-    <ul>
-    <div class="button_element">
-      <button type="button" name="button">
-        <li><a href="/transactions">All Transactions</a></li>
-      </button>
-      <button type="button" name="button">
-        <li><a href="/transactions/new">Add New Transaction</a></li>
-      </button>
-      <button type="button" name="button">
-        <li><a href="/transactions/new-merchant">Add New Merchant</a></li>
-      </button>
-      <button type="button" name="button">
-        <li><a href="/transactions/new-tag">Add New Category</a></li>
-      </button>
-    </div>
-    </ul>
-  </nav>
+  <div class="layout">
 
 
-  <%= yield %>
+    <h1>Money Spending Tracker</h1>
+    <nav>
+      <ul>
+        <div class="button_element">
+          <button type="button" name="button">
+            <li><a href="/transactions">All Transactions</a></li>
+          </button>
+
+          <button type="button" name="button">
+            <li><a href="/transactions/new">Add New Transaction</a></li>
+          </button>
+
+          <button type="button" name="button">
+            <li><a href="/transactions/new-merchant">Add New Merchant</a></li>
+          </button>
+
+          <button type="button" name="button">
+            <li><a href="/transactions/new-tag">Add New Category</a></li>
+          </button>
+
+          <button type="button" name="button">
+            <li>Settings
+              <ul>
+                <li><a href="./transactions/edit-merchants">Edit Merchants</a></li>
+                <li><a href="./transactions/edit-tags">Edit Categories</a></li>
+              </ul>
+            </li>
+          </button>
+        </div>
+      </ul>
+    </nav>
+
+
+    <%= yield %>
+  </div>
 </body>
 </html>
