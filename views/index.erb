@@ -1,16 +1,14 @@
+<% total = 0 %>
+
 <% @transactions.each do |transaction| %>
 <p>Merchant : <%= transaction.merchant.name %></p>
 <p>Category : <%= transaction.tag.name %></p>
 <p>Total value : £<%= transaction.value %></p>
-<p><a href="/transactions/<%= transaction.id %>">Show Transaction Detail</a></p>
+<% total += transaction.value %>
+<p><a href="/transactions/<%= transaction.id %>">Show Detail</a></p>
 <hr>
 <% end %>
 
-Total = 0
-<% @transactions.each do |transaction| %>
-
-Total =+ tansaction.value
-
-<% end %>
-
-<p>"#{total}"</p>
+<div class="total-spend">
+<p>Total Spending YTD : <%="£#{total}"%></p>
+</div>
