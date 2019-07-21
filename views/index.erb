@@ -5,3 +5,12 @@
 <p><a href="/transactions/<%= transaction.id %>">Show Transaction Detail</a></p>
 <hr>
 <% end %>
+
+Total = 0
+<% @transactions.each do |transaction| %>
+
+Total =+ tansaction.value
+
+<% end %>
+
+<p>"#{total}"</p>

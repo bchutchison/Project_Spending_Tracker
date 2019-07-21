@@ -1,0 +1,14 @@
+<% @merchants.each do |merchant| %>
+<p>Merchant Name : <%= merchant.name %></p>
+
+<div class="button_element">
+  <button type="button" name="button"><a href="/transactions/<%= merchant.id %>/edit-merchant">Edit Merchant</a></button>
+</div>
+
+<div class="button_element">
+  <form action="/transactions/<%= merchant.id %>/delete-merchant" method="post"><input type="submit" value="Delete"></form>
+</div>
+
+
+<hr>
+<% end %>

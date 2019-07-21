@@ -1,0 +1,13 @@
+<% @tags.each do |tag| %>
+<p>Category : <%= tag.name %></p>
+
+<div class="button_element">
+  <button type="button" name="button"><a href="/transactions/<%= tag.id %>/edit-tag">Edit Category</a></button>
+</div>
+
+<div class="button_element">
+  <form action="/transactions/<%= tag.id %>/delete-tag" method="post"><input type="submit" value="Delete"></form>
+</div>
+
+<hr>
+<% end %>

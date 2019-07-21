@@ -1,0 +1,16 @@
+<h2>Modify Category Information</h2>
+<form action="/transactions/<%= @merchants.id %>/change-merchant" method="post">
+
+  <div class="form-wrapper">
+
+    <div class="form-element">
+      <label for="name">Category Name :</label>
+      <input type="text" name="name" id="name" value="<%= @merchants.name %>">
+    </div>
+
+    <div class="button-element">
+      <input type="submit" value="Save Changes">
+    </div>
+
+  </div>
+</form>
