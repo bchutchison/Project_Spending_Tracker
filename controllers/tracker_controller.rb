@@ -2,10 +2,10 @@ require('sinatra')
 require('sinatra/reloader')
 require('pry-byebug')
 
-require_relative('./models/transaction.rb')
-require_relative('./models/tag.rb')
-require_relative('./models/merchant.rb')
-also_reload('./models/*')
+require_relative('../models/transaction.rb')
+require_relative('../models/tag.rb')
+require_relative('../models/merchant.rb')
+also_reload('../models/*')
 
 #INDEX
 get '/transactions' do
@@ -13,14 +13,10 @@ get '/transactions' do
   @transactions_total = Transaction.total_transactions()
   @tag = Tag.all
   @merchant = Merchant.all
-  erb(:index)
+  erb(:"transactions/index")
 end
 
-# INDEX TAGS
-get '/transactions/tags' do
-  @tags = Tag.all
-  erb(:tags)
-end
+
 
 #INDEX MERCHANTS
 get '/transactions/merchants' do
@@ -28,19 +24,19 @@ get '/transactions/merchants' do
   erb(:merchants)
 end
 
-
-
 #NEW
 get '/transactions/new' do
   @tags = Tag.all
   @merchants = Merchant.all
-  erb(:new)
+  erb(:"transactions/new")
 end
 
 post '/transactions' do
   Transaction.new(params).save
   redirect to '/transactions'
 end
+
+
 
 #NEW MERCHANT
 get '/transactions/new-merchant' do
@@ -53,16 +49,7 @@ post '/transactions/merchant' do
   redirect to '/transactions/new-merchant'
 end
 
-#NEW TAG
-get '/transactions/new-tag' do
-  @tags = Tag.all
-  erb(:new_tag)
-end
 
-post '/transactions/tag' do
-  Tag.new(params).save
-  redirect to '/transactions/new-tag'
-end
 
 
 #EDIT
@@ -70,7 +57,7 @@ get '/transactions/:id/edit' do
   @tags = Tag.all
   @merchants = Merchant.all
   @transactions = Transaction.find(params['id'])
-  erb(:edit)
+  erb(:"transactions/edit")
 end
 post '/transactions/:id' do
   transaction = Transaction.new(params)
@@ -89,16 +76,7 @@ post '/transactions/:id/change-merchant' do
   redirect to "/transactions/merchants"
 end
 
-#EDIT TAG
-get '/transactions/:id/edit-tag' do
-  @tags = Tag.find(params['id'])
-  erb(:edit_tag)
-end
-post '/transactions/:id/change-tag' do
-  tag = Tag.new(params)
-  tag.update
-  redirect to "/transactions/tags"
-end
+
 
 
 
@@ -114,11 +92,7 @@ post '/transactions/:id/delete-merchant' do
   redirect to '/transactions/merchants'
 end
 
-#DELETE TAG
-post '/transactions/:id/delete-tag' do
-  Tag.delete(params['id'])
-  redirect to '/transactions/tags'
-end
+
 
 
 #SHOW
@@ -126,5 +100,5 @@ get '/transactions/:id' do
   @transaction = Transaction.find(params['id'])
   @tag = Tag.all
   @merchant = Merchant.all
-  erb(:show)
+  erb(:"transactions/show")
 end
