@@ -1,4 +1,3 @@
-
 <table>
   <div class="table">
 <tr>
@@ -22,13 +21,11 @@
 
 <hr>
 
-<button type="button" name="button">
-  <li>Table Options
-    <ul>
-      <li><a href="/transactions/sort/ASC">Sort Table By Date</a></li>
-    </ul>
-  </li>
-</button>
+<div class="button_element">
+  <button type="button" name="button"><a href="/transactions/sort/ASC">Sort Ascending</a></button>
+  <button type="button" name="button"><a href="/transactions/sort/DESC">Sort Descending</a></button>
+</div>
+
 
 <div class="total-spend">
 <p>Total Spending YTD : <%= "£#{@transactions_total}" %></p>

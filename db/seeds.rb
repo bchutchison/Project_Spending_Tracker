@@ -46,6 +46,15 @@ transaction2 = Transaction.new({
 })
 transaction2.save()
 
+transaction3 = Transaction.new({
+  'tag_id' => tag1.id,
+  'merchant_id' => merchant2.id,
+  'value' => 50,
+  'details' => 'Purchased hifi',
+  'order_date' => 20190615
+})
+transaction3.save()
+
 
 
 binding.pry

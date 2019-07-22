@@ -97,5 +97,14 @@ class Transaction
     return total
   end
 
+def self.sort_by_date(direction = 'ASC')
+  sql = "SELECT * FROM transactions
+  ORDER BY order_date #{direction}"
+  transactions = SqlRunner.run(sql)
+  result = transactions.map{ |transaction| Transaction.new(transaction)}
+  return result
+end
+
+
 
 end

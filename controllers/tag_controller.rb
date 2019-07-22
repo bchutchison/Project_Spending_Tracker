@@ -26,6 +26,7 @@ post '/tags' do
   redirect to '/tags/new-tag'
 end
 
+
 #EDIT TAG
 get '/tags/:id/edit-tag' do
   @tags = Tag.find(params['id'])
