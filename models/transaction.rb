@@ -93,7 +93,7 @@ class Transaction
   def self.total_transactions
     array = self.all()
     total = 0
-    result = array.map{|price| total += price.value}
+    array.map{|price| total += price.value}
     return total
   end
 
