@@ -21,9 +21,16 @@
 
 <hr>
 
-<div class="button_element">
-  <button type="button" name="button"><a href="/transactions/sort/ASC">Sort Date Ascending</a></button>
-  <button type="button" name="button"><a href="/transactions/sort/DESC">Sort Date Descending</a></button>
+  <div class="drop-list">
+    <button class="drop-button">Dropdown</button>
+    <div class="dropdown-content">
+      <% @merchant.each do |merchant| %>
+        <a href="/transactions/sort-merchant/<%= merchant.name %>"><%= merchant.name %></a>
+      <% end %>
+    </div>
+  </div>
+
+</div>
 
 
 <div class="total-spend">

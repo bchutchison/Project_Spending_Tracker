@@ -25,6 +25,15 @@ get '/transactions/sort/:dir' do
   erb(:"transactions/sort")
 end
 
+#SORT MERCHANT
+get '/transactions/sort-merchant/:merch' do
+  @transactions = Transaction.sort_by_merchant(params['merch'])
+  @transactions_total = Transaction.total_transactions()
+  @tag = Tag.all
+  @merchant = Merchant.all
+  erb(:"transactions/sort_merchant")
+end
+
 
 #NEW
 get '/transactions/new' do

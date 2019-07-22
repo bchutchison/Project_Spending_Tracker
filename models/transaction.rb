@@ -97,13 +97,25 @@ class Transaction
     return total
   end
 
-def self.sort_by_date(direction = 'ASC')
-  sql = "SELECT * FROM transactions
-  ORDER BY order_date #{direction}"
-  transactions = SqlRunner.run(sql)
-  result = transactions.map{ |transaction| Transaction.new(transaction)}
-  return result
-end
+  def self.sort_by_date(direction = 'ASC')
+    sql = "SELECT * FROM transactions
+    ORDER BY order_date #{direction}"
+    transactions = SqlRunner.run(sql)
+    result = transactions.map{ |transaction| Transaction.new(transaction)}
+    return result
+  end
+
+
+  def self.sort_by_merchant(merchant = "none")
+    sql = "SELECT * FROM transactions
+    INNER JOIN merchants
+    ON merchants.id = transactions.merchant_id
+    WHERE merchants.name = $1"
+    values = [merchant]
+    transactions = SqlRunner.run(sql, values)
+    result = transactions.map{ |transaction| Transaction.new(transaction)}
+    return result
+  end
 
 
 
