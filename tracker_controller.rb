@@ -10,6 +10,7 @@ also_reload('./models/*')
 #INDEX
 get '/transactions' do
   @transactions = Transaction.all()
+  @transactions_total = Transaction.total_transactions()
   @tag = Tag.all
   @merchant = Merchant.all
   erb(:index)

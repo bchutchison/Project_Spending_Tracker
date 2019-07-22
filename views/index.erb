@@ -1,6 +1,9 @@
 <% total = 0 %>
 
 <% @transactions.each do |transaction| %>
+<!-- <tr>
+  <td></td>
+</tr> -->
 <p>Merchant : <%= transaction.merchant.name %></p>
 <p>Category : <%= transaction.tag.name %></p>
 <p>Total value : £<%= transaction.value %></p>
@@ -12,4 +15,8 @@
 
 <div class="total-spend">
 <p>Total Spending YTD : <%="£#{total}"%></p>
+</div>
+
+<div class="total-spend">
+<p>Total Spending YTD : <%= "£#{@transactions_total}" %></p>
 </div>

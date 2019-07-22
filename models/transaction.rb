@@ -83,12 +83,19 @@ class Transaction
     value,
     details)
     =
-    ($1, $2, $3, $4)
-    WHERE id = $5"
-    values = [@tag_id, @merchant_id, @value, @details, @id]
+    ($1, $2, $3, $4, $5)
+    WHERE id = $6"
+    values = [@tag_id, @merchant_id, @value, @details, @order_date, @id]
     SqlRunner.run(sql, values)
   end
 
+
+  def self.total_transactions
+    array = self.all()
+    total = 0
+    result = array.map{|price| total += price.value}
+    return total
+  end
 
 
 end
