@@ -105,13 +105,23 @@ class Transaction
     return result
   end
 
-
-  def self.sort_by_merchant(merchant = "none")
+  def self.sort_by_merchant(merchant)
     sql = "SELECT * FROM transactions
     INNER JOIN merchants
     ON merchants.id = transactions.merchant_id
     WHERE merchants.name = $1"
     values = [merchant]
+    transactions = SqlRunner.run(sql, values)
+    result = transactions.map{ |transaction| Transaction.new(transaction)}
+    return result
+  end
+
+  def self.sort_by_tag(tag)
+    sql = "SELECT * FROM transactions
+    INNER JOIN tags
+    ON tags.id = transactions.tag_id
+    WHERE tags.name = $1"
+    values = [tag]
     transactions = SqlRunner.run(sql, values)
     result = transactions.map{ |transaction| Transaction.new(transaction)}
     return result

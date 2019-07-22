@@ -22,10 +22,10 @@
 <hr>
 
   <div class="drop-list">
-    <button class="drop-button">Merchant</button>
+    <button class="drop-button">Categories</button>
     <div class="dropdown-content">
-      <% @merchant.each do |merchant| %>
-        <a href="/transactions/sort-merchant/<%= merchant.name %>"><%= merchant.name %></a>
+      <% @tag.each do |tag| %>
+        <a href="/transactions/sort-tag/<%= tag.name %>"><%= tag.name %></a>
       <% end %>
     </div>
   </div>
