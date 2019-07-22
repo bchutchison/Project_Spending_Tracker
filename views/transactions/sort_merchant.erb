@@ -34,5 +34,9 @@
 
 
 <div class="total-spend">
-<p>Total Spending YTD : <%= "£#{@transactions_total}" %></p>
+  <% total = 0 %>
+  <% @transactions.each do |price| %>
+  <% total += price.value %>
+  <% end %>
+<p>Total Spending YTD : <%= "£#{total}" %></p>
 </div>
