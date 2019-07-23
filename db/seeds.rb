@@ -61,8 +61,7 @@ transaction3 = Transaction.new({
 transaction3.save()
 
 user1 = User.new({
-  'budget' => 500,
-  'name' => 'Joe'
+  'budget' => 500
   })
   user1.save()
 

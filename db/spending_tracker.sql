@@ -25,6 +25,5 @@ CREATE TABLE transactions (
 
 CREATE TABLE users (
   id SERIAL4 primary key,
-  name VARCHAR(255),
   budget INT4
 );

@@ -3,22 +3,21 @@ require_relative('../db/sql_runner')
 class User
 
   attr_reader :id
-  attr_accessor :budget, :name
+  attr_accessor :budget
 
 
     def initialize(options)
       @id = options['id'].to_i if options['id']
-      @name = options['name']
       @budget = options['budget'].to_i
     end
 
     def save()
       sql = "INSERT INTO users
-      (budget, name)
+      (budget)
       VALUES
-      ($1,$2)
+      ($1)
       RETURNING id"
-      values = [@budget, @name]
+      values = [@budget]
       user = SqlRunner.run( sql, values )
       @id = user.first()['id'].to_i
     end
@@ -58,11 +57,11 @@ class User
     def update()
       sql = "UPDATE users
       SET
-      (budget, name)
+      budget
       =
-      ($1, $2)
-      WHERE id = $3"
-      values = [@budget, @name, @id]
+      $1
+      WHERE id = $2"
+      values = [@budget, @id]
       SqlRunner.run(sql, values)
     end
 

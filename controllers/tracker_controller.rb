@@ -8,6 +8,8 @@ require_relative('../models/tag.rb')
 require_relative('../models/merchant.rb')
 also_reload('../models/*')
 
+
+#refactor 4 pages below inot one page
 #INDEX
 get '/transactions' do
   @transactions = Transaction.all()
