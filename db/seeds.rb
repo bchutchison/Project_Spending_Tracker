@@ -1,11 +1,13 @@
 require_relative('../models/merchant.rb')
 require_relative('../models/tag.rb')
 require_relative('../models/transaction.rb')
+require_relative('../models/user.rb')
 require('pry-byebug')
 
 Transaction.delete_all()
 Tag.delete_all()
 Merchant.delete_all()
+User.delete_all()
 
 
 merchant1 = Merchant.new({'name' => 'Amazon'})
@@ -57,6 +59,12 @@ transaction3 = Transaction.new({
     'receipt' => 'DLkjZsA'
 })
 transaction3.save()
+
+user1 = User.new({
+  'budget' => 500,
+  'name' => 'Joe'
+  })
+  user1.save()
 
 
 

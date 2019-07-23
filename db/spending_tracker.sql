@@ -1,6 +1,7 @@
 DROP TABLE transactions;
 DROP TABLE merchants;
 DROP TABLE tags;
+DROP TABLE users;
 
 CREATE TABLE tags (
   id SERIAL4 primary key,
@@ -20,4 +21,10 @@ CREATE TABLE transactions (
   details TEXT,
   order_date DATE,
   receipt VARCHAR(255)
+);
+
+CREATE TABLE users (
+  id SERIAL4 primary key,
+  name VARCHAR(255),
+  budget INT4
 );
