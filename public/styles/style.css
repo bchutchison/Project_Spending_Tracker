@@ -1,0 +1,36 @@
+body {
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+}
+
+
+header {
+
+}
+
+
+nav p {
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  color: rgb(000,000,000,0.7);
+  font-size: 28px;
+  font-weight: bold;
+  float: left;
+  padding: 0px 10px;
+}
+
+nav ul {
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  color: rgb(000,000,000,0.7);
+  text-decoration: none;
+}
+
+nav ul li {
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  color: rgb(000,000,000,0.7);
+  text-decoration: none;
+}
+
+.button_element {
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  color: rgb(000,000,000,0.7);
+  text-decoration: none;
+}

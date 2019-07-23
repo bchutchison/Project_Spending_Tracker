@@ -16,8 +16,10 @@ get '/transactions' do
   @transactions_total = Transaction.total_transactions()
   @tag = Tag.all
   @merchant = Merchant.all
+  @user = User.all[0]
   erb(:"transactions/index")
 end
+
 
 #SORT INDEX
 get '/transactions/sort/:dir' do
@@ -25,6 +27,7 @@ get '/transactions/sort/:dir' do
   @transactions_total = Transaction.total_transactions()
   @tag = Tag.all
   @merchant = Merchant.all
+  @user = User.all[0]
   erb(:"transactions/sort")
 end
 
@@ -34,6 +37,7 @@ get '/transactions/sort-merchant/:merch' do
   @transactions_total = Transaction.total_transactions()
   @tag = Tag.all
   @merchant = Merchant.all
+  @user = User.all[0]
   erb(:"transactions/sort_merchant")
 end
 
@@ -43,6 +47,7 @@ get '/transactions/sort-tag/:category' do
   @transactions_total = Transaction.total_transactions()
   @tag = Tag.all
   @merchant = Merchant.all
+  @user = User.all[0]
   erb(:"transactions/sort_tag")
 end
 
@@ -51,6 +56,8 @@ end
 get '/transactions/new' do
   @tags = Tag.all
   @merchants = Merchant.all
+  @transactions_total = Transaction.total_transactions()
+  @user = User.all[0]
   erb(:"transactions/new")
 end
 

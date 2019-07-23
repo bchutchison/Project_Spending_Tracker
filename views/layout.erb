@@ -4,41 +4,59 @@
 <head>
   <meta charset="utf-8">
   <title>Spending Tracker</title>
+  <link rel="stylesheet" type="text/css" href="/styles/style.css">
 </head>
 
 <body>
   <div class="layout">
 
+    <header>
+      <nav>
+        <ul>
+          <p>Money Spending Tracker</p>
+          <div class="button_element">
+            <button type="button" name="button">
+              <li><a href="/">Home</a></li>
+            </button>
 
-    <h1>Money Spending Tracker</h1>
-    <nav>
-      <ul>
-        <div class="button_element">
-          <button type="button" name="button">
-            <li><a href="/">Home</a></li>
-          </button>
+            <button type="button" name="button">
+              <li><a href="/transactions">All Transactions</a></li>
+            </button>
 
-          <button type="button" name="button">
-            <li><a href="/transactions">All Transactions</a></li>
-          </button>
+            <button type="button" name="button">
+              <li><a href="/transactions/new">Add New Transaction</a></li>
+            </button>
 
-          <button type="button" name="button">
-            <li><a href="/transactions/new">Add New Transaction</a></li>
-          </button>
+            <button type="button" name="button">
+              <li>Settings
+                <ul>
+                  <li><a href="/merchants/new-merchant">Add New Merchant</a></li>
+                  <li><a href="/tags/new-tag">Add New Category</a></li>
+                  <li><a href="/merchants">Edit Merchants</a></li>
+                  <li><a href="/tags">Edit Categories</a></li>
+                </ul>
+              </li>
+            </button>
 
-          <button type="button" name="button">
-            <li>Settings
-              <ul>
-                <li><a href="/merchants/new-merchant">Add New Merchant</a></li>
-                <li><a href="/tags/new-tag">Add New Category</a></li>
-                <li><a href="/merchants">Edit Merchants</a></li>
-                <li><a href="/tags">Edit Categories</a></li>
-              </ul>
-            </li>
-          </button>
-        </div>
-      </ul>
-    </nav>
+            <button type="button" name="button">
+              <li>Table Options
+                <ul>
+                  <li><a href="/transactions/sort/DESC">Sort Table By Date</a></li>
+                  <li><a href="/transactions/sort-merchant/default">Sort Table By Merchant</a></li>
+                  <li><a href="/transactions/sort-tag/default">Sort Table By Tag</a></li>
+                  <li><a href="/pie_merchant">Merchant Pie Chart</a>
+                  <% Transaction.total_value_by_merchant_pie_chart() %></li>
+                  <li><a href="/pie_tag">Tag Pie Chart</a>
+                  <% Transaction.total_value_by_tag_pie_chart() %></li>
+                </ul>
+              </li>
+            </button>
+
+          </div>
+        </ul>
+      </nav>
+      <br>
+    </header>
 
 
     <%= yield %>

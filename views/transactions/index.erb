@@ -19,27 +19,19 @@
   <td><a href="/transactions/<%= transaction.id %>">Show Details</a></td>
   </tr>
 
-
   <% end %>
     </div>
 </table>
 
-<hr>
-
-<button type="button" name="button">
-  <li>Table Options
-    <ul>
-      <li><a href="/transactions/sort/DESC">Sort Table By Date</a></li>
-      <li><a href="/transactions/sort-merchant/default">Sort Table By Merchant</a></li>
-      <li><a href="/transactions/sort-tag/default">Sort Table By Tag</a></li>
-      <li><a href="/pie_merchant">Merchant Pie Chart</a>
-      <% Transaction.total_value_by_merchant_pie_chart() %></li>
-      <li><a href="/pie_tag">Tag Pie Chart</a>
-      <% Transaction.total_value_by_tag_pie_chart() %></li>
-    </ul>
-  </li>
-</button>
 
 <div class="total-spend">
 <p>Total Spending YTD : <%= "£#{@transactions_total}" %></p>
 </div>
+
+<footer>
+<% if @transactions_total >= @user.budget %>
+<div class="warning">
+  <p>You have passed your specified budget!</p>
+</div>
+<% end %>
+</footer>
