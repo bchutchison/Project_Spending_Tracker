@@ -81,7 +81,8 @@ class Transaction
     (tag_id,
     merchant_id,
     value,
-    details)
+    details,
+    order_date)
     =
     ($1, $2, $3, $4, $5)
     WHERE id = $6"

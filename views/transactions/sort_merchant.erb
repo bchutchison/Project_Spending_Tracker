@@ -23,6 +23,7 @@
 
   <div class="drop-list">
     <button class="drop-button">Merchant</button>
+    <button type="button" name="button"><a href="/transactions">Back</a></button>
     <div class="dropdown-content">
       <% @merchant.each do |merchant| %>
         <a href="/transactions/sort-merchant/<%= merchant.name %>"><%= merchant.name %></a>
