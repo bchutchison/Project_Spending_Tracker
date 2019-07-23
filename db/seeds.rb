@@ -49,7 +49,7 @@ transaction2 = Transaction.new({
 transaction2.save()
 
 transaction3 = Transaction.new({
-  'tag_id' => tag1.id,
+  'tag_id' => tag2.id,
   'merchant_id' => merchant2.id,
   'value' => 50,
   'details' => 'Purchased hifi',

@@ -15,7 +15,7 @@
   <td><%= transaction.tag.name %></td>
   <td><%= "£#{transaction.value}" %></td>
   <td><%= transaction.order_date %></td>
-  <td><a href="https://imgur.com/<%= transaction.receipt %>" target="_blank"=>Receipt</a></td>
+  <td><a href="https://imgur.com/<%= transaction.receipt %>" target="_blank"=><%= transaction.receipt %></a></td>
   <td><a href="/transactions/<%= transaction.id %>">Show Details</a></td>
   </tr>
 

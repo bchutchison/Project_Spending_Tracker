@@ -1,0 +1,13 @@
+<h2>User Information</h2>
+
+<p>Please enter your current budget: £500</p>
+
+<div class="total-spend">
+<p>Total Spending YTD : <%= "£#{@transactions_total}" %></p>
+</div>
+
+<% if @transactions_total >= 500 %>
+<div class="warning">
+  <p>You have passed your specified budget!</p>
+</div>
+<% end %>
