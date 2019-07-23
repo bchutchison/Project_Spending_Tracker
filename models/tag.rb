@@ -64,5 +64,14 @@ class Tag
     SqlRunner.run(sql, values)
   end
 
+  def total_spending()
+    sql = "SELECT SUM(value)
+    FROM transactions
+    WHERE tag_id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values).first()['sum'].to_i
+    return result
+  end
+
 
 end

@@ -64,7 +64,15 @@ class Merchant
     SqlRunner.run(sql, values)
   end
 
-
+  def total_spending()
+  # create method for finding total transaction value in sql
+    sql = "SELECT SUM(value)
+    FROM transactions
+    WHERE merchant_id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values).first()['sum'].to_i
+    return result
+  end
 
 
 end

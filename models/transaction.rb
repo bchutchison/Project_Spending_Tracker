@@ -1,6 +1,7 @@
 require_relative('../db/sql_runner')
 require_relative('./tag.rb')
 require_relative('./merchant.rb')
+require('pi_charts')
 
 class Transaction
 
@@ -129,6 +130,37 @@ class Transaction
     result = transactions.map{ |transaction| Transaction.new(transaction)}
     return result
   end
+
+
+
+
+#Please note that this 'may be' (definitely is) illegal code according to the brief. Uses require('pi_charts') explained at https://medium.com/@KentGruber/picharts-easy-javascript-charts-with-ruby-e39e0b34332a
+
+  def self.total_value_by_merchant_pie_chart()
+    chart = PiCharts::Pie.new
+    merchants = Merchant.all()
+    for merchant in merchants
+      chart.add_dataset(label: merchant.name, data: merchant.total_spending())
+    end
+    chart.hover
+    chart.responsive
+    "<head>" + chart.cdn + "</head>" + "<body>" + chart.html(width: 60) + "</body>"
+  end
+
+  def self.total_value_by_tag_pie_chart()
+    chart = PiCharts::Pie.new
+    tags = Tag.all()
+    for tag in tags
+      chart.add_dataset(label: tag.name, data: tag.total_spending())
+    end
+    chart.hover
+    chart.responsive
+    "<head>" + chart.cdn + "</head>" + "<body>" + chart.html(width: 60) + "</body>"
+  end
+
+
+
+
 
 
 

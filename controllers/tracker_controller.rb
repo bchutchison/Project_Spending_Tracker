@@ -1,6 +1,7 @@
 require('sinatra')
 require('sinatra/reloader')
 require('pry-byebug')
+require('pi_charts')
 
 require_relative('../models/transaction.rb')
 require_relative('../models/tag.rb')
@@ -87,3 +88,10 @@ get '/transactions/:id' do
   @merchant = Merchant.all
   erb(:"transactions/show")
 end
+
+
+
+# Please note that this 'may be' (definitely is) illegal code according to the brief. Uses require('pi_charts') explained at https://medium.com/@KentGruber/picharts-easy-javascript-charts-with-ruby-e39e0b34332a
+
+get('/pie_merchant') { Transaction.total_value_by_merchant_pie_chart() }
+get('/pie_tag') { Transaction.total_value_by_tag_pie_chart() }

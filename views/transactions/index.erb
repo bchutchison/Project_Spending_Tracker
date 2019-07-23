@@ -32,6 +32,10 @@
       <li><a href="/transactions/sort/DESC">Sort Table By Date</a></li>
       <li><a href="/transactions/sort-merchant/default">Sort Table By Merchant</a></li>
       <li><a href="/transactions/sort-tag/default">Sort Table By Tag</a></li>
+      <li><a href="/pie_merchant">Merchant Pie Chart</a>
+      <% Transaction.total_value_by_merchant_pie_chart() %></li>
+      <li><a href="/pie_tag">Tag Pie Chart</a>
+      <% Transaction.total_value_by_tag_pie_chart() %></li>
     </ul>
   </li>
 </button>
