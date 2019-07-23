@@ -13,8 +13,8 @@
   <td><%= transaction.merchant.name %></td>
   <td><%= transaction.tag.name %></td>
   <td><%= "£#{transaction.value}" %></td>
-  <td><%= transaction.receipt %></td>
   <td><%= transaction.order_date %></td>
+  <td><%= transaction.receipt %></td>
   <td><a href="/transactions/<%= transaction.id %>">Show Details</a></td>
   </tr>
   <% end %>

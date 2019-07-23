@@ -1,5 +1,12 @@
 body {
   font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  color: rgb(000,000,000,0.7);
+  background: white url('/images/backdrop.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  font-family: 'Merriweather', serif;
+  padding: 0px;
+  margin: 0px;
 }
 
 
