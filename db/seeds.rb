@@ -33,7 +33,8 @@ transaction1 = Transaction.new({
   'merchant_id' => merchant1.id,
   'value' => 20,
   'details' => 'Purchased DVD',
-  'order_date' => 20190621
+  'order_date' => 20190621,
+  'receipt' => 'DLkjZsA'
 })
 transaction1.save()
 
@@ -42,7 +43,8 @@ transaction2 = Transaction.new({
   'merchant_id' => merchant1.id,
   'value' => 50,
   'details' => 'Purchased hifi',
-  'order_date' => 20190621
+  'order_date' => 20190621,
+    'receipt' => 'DLkjZsA'
 })
 transaction2.save()
 
@@ -51,7 +53,8 @@ transaction3 = Transaction.new({
   'merchant_id' => merchant2.id,
   'value' => 50,
   'details' => 'Purchased hifi',
-  'order_date' => 20190615
+  'order_date' => 20190615,
+    'receipt' => 'DLkjZsA'
 })
 transaction3.save()
 

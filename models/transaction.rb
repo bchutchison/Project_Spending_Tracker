@@ -5,7 +5,7 @@ require_relative('./merchant.rb')
 class Transaction
 
   attr_reader :id
-  attr_accessor :tag_id, :merchant_id, :value, :details, :order_date
+  attr_accessor :tag_id, :merchant_id, :value, :details, :order_date, :receipt
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -14,16 +14,17 @@ class Transaction
     @value = options['value'].to_i
     @details = options['details']
     @order_date = options ['order_date']
+    @receipt = options ['receipt']
   end
 
 #CREATE
   def save()
     sql = "INSERT INTO transactions
-    (tag_id, merchant_id, value, details, order_date)
+    (tag_id, merchant_id, value, details, order_date, receipt)
     VALUES
-    ($1,$2,$3,$4,$5)
+    ($1,$2,$3,$4,$5,$6)
     RETURNING id"
-    values = [@tag_id, @merchant_id, @value, @details, @order_date]
+    values = [@tag_id, @merchant_id, @value, @details, @order_date, @receipt]
     transaction = SqlRunner.run( sql, values )
     @id = transaction.first()['id'].to_i
   end
@@ -82,11 +83,12 @@ class Transaction
     merchant_id,
     value,
     details,
-    order_date)
+    order_date,
+    receipt)
     =
-    ($1, $2, $3, $4, $5)
-    WHERE id = $6"
-    values = [@tag_id, @merchant_id, @value, @details, @order_date, @id]
+    ($1, $2, $3, $4, $5, $6)
+    WHERE id = $7"
+    values = [@tag_id, @merchant_id, @value, @details, @order_date, @receipt, @id]
     SqlRunner.run(sql, values)
   end
 

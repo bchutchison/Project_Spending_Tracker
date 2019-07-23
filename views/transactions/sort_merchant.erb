@@ -5,6 +5,7 @@
   <th>Category</th>
   <th>Transaction Value</th>
   <th>Purchase Date</th>
+  <th>receipt</th>
   <th>Detail</th>
 </tr>
   <% @transactions.each do |transaction| %>
@@ -13,6 +14,7 @@
   <td><%= transaction.tag.name %></td>
   <td><%= "£#{transaction.value}" %></td>
   <td><%= transaction.order_date %></td>
+  <td><%= transaction.receipt %></td>
   <td><a href="/transactions/<%= transaction.id %>">Show Details</a></td>
   </tr>
   <% end %>
