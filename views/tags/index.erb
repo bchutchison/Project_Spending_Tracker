@@ -2,12 +2,11 @@
 <% @tags.each do |tag| %>
 <p>Category : <%= tag.name %></p>
 
-<div class="button_element">
-  <button type="button" name="button"><a href="/tags/<%= tag.id %>/edit-tag">Edit Category</a></button>
-</div>
 
-<div class="button_element">
-  <form onsubmit="return confirm('Be aware that deleting a category linked to a transaction will delete all associated data. Are you sure you want to delete this category?')" action="/tags/<%= tag.id %>/delete-tag" method="post"><input type="submit" value="Delete"></form>
+<div class="flex_container">
+  <a class="button_element button_orange" href="/tags/<%= tag.id %>/edit-tag">Edit Category</a>
+
+  <form onsubmit="return confirm('Be aware that deleting a category linked to a transaction will delete all associated data. Are you sure you want to delete this category?')" action="/tags/<%= tag.id %>/delete-tag" method="post"><input class="button_element button_red" type="submit" value="Delete"></form>
 </div>
 
 <hr>

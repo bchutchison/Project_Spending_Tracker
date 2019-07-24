@@ -28,6 +28,7 @@ header p {
   background-color: white;
   font-family: 'Trebuchet MS', Helvetica, sans-serif;
   width: 100vw;
+  min-width: 1000px;
   font-weight: 900;
 }
 
@@ -64,7 +65,7 @@ header p {
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: rgb(255,255,255);
+
 
 }
 

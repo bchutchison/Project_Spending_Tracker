@@ -4,6 +4,7 @@ require_relative('controllers/merchant_controller')
 require_relative('controllers/tag_controller')
 require_relative('controllers/tracker_controller')
 require_relative('./models/user.rb')
+require_relative('./models/transaction.rb')
 
 
 
@@ -18,6 +19,7 @@ end
 
 #EDIT BUDGET
 get '/:id/new-budget' do
+  @transactions_total = Transaction.total_transactions()
   @user = User.all[0]
   erb(:new_budget)
 end

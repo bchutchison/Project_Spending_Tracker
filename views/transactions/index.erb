@@ -1,42 +1,45 @@
 <h2>All Transactions</h2>
 
-<div style="overflow-x:auto">
+<div style="overflow-y:auto">
 
-<table>
-  <div class="table">
-<tr>
-  <th>Merchant</th>
-  <th>Category</th>
-  <th>Value</th>
-  <th>Purchase Date</th>
-  <th>Receipt</th>
-  <th>Detail</th>
-</tr>
-  <% @transactions.each do |transaction| %>
-  <tr>
-  <td><%= transaction.merchant.name %></td>
-  <td><%= transaction.tag.name %></td>
-  <td><%= "£#{transaction.value}" %></td>
-  <td><%= transaction.order_date %></td>
-  <td><a href="https://imgur.com/<%= transaction.receipt %>" target="_blank"=><%= transaction.receipt %></a></td>
-  <td><a href="/transactions/<%= transaction.id %>">Show Details</a></td>
-  </tr>
 
-  <% end %>
-    </div>
-    <br>
-</table>
+  <div style="overflow-x:auto">
+    <table>
+      <div class="table">
+        <tr>
+          <th>Merchant</th>
+          <th>Category</th>
+          <th>Value</th>
+          <th>Purchase Date</th>
+          <th>Receipt</th>
+          <th>Detail</th>
+        </tr>
+        <% @transactions.each do |transaction| %>
+        <tr>
+          <td><%= transaction.merchant.name %></td>
+          <td><%= transaction.tag.name %></td>
+          <td><%= "£#{transaction.value}" %></td>
+          <td><%= transaction.order_date %></td>
+          <td><a href="https://imgur.com/<%= transaction.receipt %>" target="_blank"=><%= transaction.receipt %></a></td>
+          <td><a href="/transactions/<%= transaction.id %>">Show Details</a></td>
+        </tr>
 
+        <% end %>
+      </div>
+      <br>
+    </table>
+
+  </div>
 </div>
 
 <div class="total-spend">
-<p>Total Spending YTD : <%= "£#{@transactions_total}" %></p>
+  <p>Total Spending YTD : <%= "£#{@transactions_total}" %></p>
 </div>
 
 <footer>
-<% if @transactions_total >= @user.budget %>
-<div class="warning">
-  <p>You have spent your specified budget!</p>
-</div>
-<% end %>
+  <% if @transactions_total >= @user.budget %>
+  <div class="warning">
+    <p>You have spent your specified budget!</p>
+  </div>
+  <% end %>
 </footer>

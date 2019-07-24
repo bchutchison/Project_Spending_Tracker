@@ -12,7 +12,7 @@
 </div>
 
 <div class="button_element">
-  <form onsubmit="confirm('Are you sure you want to delete this transaction?')" action="/transactions/<%= @transaction.id %>/delete" method="post"><input type="submit" value="Delete"></form>
+  <form onsubmit="return confirm('Are you sure you want to delete this transaction?')" action="/transactions/<%= @transaction.id %>/delete" method="post"><input type="submit" value="Delete"></form>
 </div>
 
 <div class="button_element">

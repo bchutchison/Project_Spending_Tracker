@@ -24,12 +24,17 @@
     </div>
 </table>
 
-<hr>
+<br>
 
-<div class="button_element">
-  <button type="button" name="button"><a href="/transactions/sort/ASC">Sort Date Ascending</a></button>
-  <button type="button" name="button"><a href="/transactions/sort/DESC">Sort Date Descending</a></button>
-  <button type="button" name="button"><a href="/transactions">Back</a></button>
+<div class="flex_container">
+  <a class="button_element button_blue" href="/transactions/sort/ASC">Sort Date Ascending</a>
+
+  <a class="button_element button_blue" href="/transactions/sort/DESC">Sort Date Descending</a>
+
+  <a class="button_element button_blue" href="/transactions">Back</a>
+</div>
+
+
 <div class="total-spend">
 <p>Total Spending YTD : <%= "£#{@transactions_total}" %></p>
 </div>

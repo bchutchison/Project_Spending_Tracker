@@ -10,14 +10,15 @@
     <button type="button" name="button"><a href="/<%= @user.id %>/new-budget">Edit</a></button></p>
   </div>
 
-<div class="total-spend">
-<p>Total Spending YTD : <%= "£#{@transactions_total}" %></p>
-</div>
 
 
 
+  <div class="total-spend">
+  <p>Total Spending YTD : <%= "£#{@transactions_total}" %></p>
+  </div>
 
 <footer>
+
 <% if @transactions_total >= @user.budget %>
 <div class="warning">
   <p>You have spent your specified budget!</p>
