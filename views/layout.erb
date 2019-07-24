@@ -2,59 +2,65 @@
 <html lang="en" dir="ltr">
 
 <head>
+  <div class="header">
   <meta charset="utf-8">
   <title>Spending Tracker</title>
   <link rel="stylesheet" type="text/css" href="/styles/style.css">
+  <link rel="stylesheet" type="text/css" href="/styles/navbar.css">
+  </div>
 </head>
 
 <body>
-  <div class="layout">
+  <div class="header">
 
     <header>
-      <nav>
-        <ul>
-          <p>Money Spending Tracker</p>
-          <div class="button_element">
-            <button type="button" name="button">
-              <li><a href="/">Home</a></li>
-            </button>
+      <div class="navbar">
 
-            <button type="button" name="button">
-              <li><a href="/transactions">All Transactions</a></li>
-            </button>
+        <p>Bee-Savvy</p>
 
-            <button type="button" name="button">
-              <li><a href="/transactions/new">Add New Transaction</a></li>
-            </button>
+        <a href="/">Home</a>
 
-            <button type="button" name="button">
-              <li>Settings
-                <ul>
-                  <li><a href="/merchants/new-merchant">Add New Merchant</a></li>
-                  <li><a href="/tags/new-tag">Add New Category</a></li>
-                  <li><a href="/merchants">Edit Merchants</a></li>
-                  <li><a href="/tags">Edit Categories</a></li>
-                </ul>
-              </li>
-            </button>
-
-            <button type="button" name="button">
-              <li>Table Options
-                <ul>
-                  <li><a href="/transactions/sort/DESC">Sort Table By Date</a></li>
-                  <li><a href="/transactions/sort-merchant/default">Sort Table By Merchant</a></li>
-                  <li><a href="/transactions/sort-tag/default">Sort Table By Category</a></li>
-                  <li><a href="/pie_merchant">Merchant Pie Chart</a>
-                  <% Transaction.total_value_by_merchant_pie_chart() %></li>
-                  <li><a href="/pie_tag">Category Pie Chart</a>
-                  <% Transaction.total_value_by_tag_pie_chart() %></li>
-                </ul>
-              </li>
-            </button>
-
+        <div class="dropdown">
+          <button class="dropbtn">Transactions
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="/transactions">All Transactions</a>
+            <a href="/transactions/new">Add New Transaction</a>
           </div>
-        </ul>
-      </nav>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn">Settings
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="/merchants/new-merchant">Add New Merchant</a>
+            <a href="/tags/new-tag">Add New Category</a>
+            <a href="/merchants">Edit Merchants</a>
+            <a href="/tags">Edit Categories</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn">Table Options
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="/transactions/sort/DESC">Sort Table By Date</a>
+            <a href="/transactions/sort-merchant/default">Sort Table By Merchant</a>
+            <a href="/transactions/sort-tag/default">Sort Table By Category</a>
+            <a href="/pie_merchant">Merchant Pie Chart</a>
+            <a href="/pie_tag">Category Pie Chart</a>
+          </div>
+        </div>
+
+        <div class="icon">
+          <a href="/" class="button-icon"><img src="/images/bee_icon.jpg" height="40" width="40" alt=""></a>
+        </div>
+
+      </div>
+      <hr>
       <br>
     </header>
 

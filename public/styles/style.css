@@ -1,43 +1,12 @@
+
+
 body {
   font-family: 'Trebuchet MS', Helvetica, sans-serif;
-  color: rgb(000,000,000,0.7);
+  color: rgb(000,000,000,0.8);
   background: white url('/images/backdrop.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
   font-family: 'Merriweather', serif;
   padding: 0px;
   margin: 0px;
-}
-
-
-header {
-
-}
-
-
-nav p {
-  font-family: 'Trebuchet MS', Helvetica, sans-serif;
-  color: rgb(000,000,000,0.7);
-  font-size: 28px;
-  font-weight: bold;
-  float: left;
-  padding: 0px 10px;
-}
-
-nav ul {
-  font-family: 'Trebuchet MS', Helvetica, sans-serif;
-  color: rgb(000,000,000,0.7);
-  text-decoration: none;
-}
-
-nav ul li {
-  font-family: 'Trebuchet MS', Helvetica, sans-serif;
-  color: rgb(000,000,000,0.7);
-  text-decoration: none;
-}
-
-.button_element {
-  font-family: 'Trebuchet MS', Helvetica, sans-serif;
-  color: rgb(000,000,000,0.7);
-  text-decoration: none;
 }
