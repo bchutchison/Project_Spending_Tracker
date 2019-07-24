@@ -1,3 +1,8 @@
+<h2>Transactions - Merchant</h2>
+<br>
+
+<div style="overflow-x:auto">
+
 <table>
   <div class="table">
 <tr>
@@ -21,17 +26,25 @@
     </div>
 </table>
 
+</div>
+
 <hr>
 
-  <div class="drop-list">
-    <button class="drop-button">Merchant</button>
-    <button type="button" name="button"><a href="/transactions">Back</a></button>
-    <div class="dropdown-content">
-      <% @merchant.each do |merchant| %>
-        <a href="/transactions/sort-merchant/<%= merchant.name %>"><%= merchant.name %></a>
-      <% end %>
-    </div>
+<div class="menus">
+<div class="dropdown">
+  <button class="dropbtn">Merchants
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content">
+    <% @merchant.each do |merchant| %>
+      <a href="/transactions/sort-merchant/<%= merchant.name %>"><%= merchant.name %></a>
+    <% end %>
+    <a href="/transactions">Back</a>
   </div>
+</div>
+</div>
+
+
 
 </div>
 

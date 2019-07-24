@@ -1,3 +1,6 @@
+<h2>Transactions - Category</h2>
+<br>
+
 <table>
   <div class="table">
 <tr>
@@ -23,15 +26,19 @@
 
 <hr>
 
-  <div class="drop-list">
-    <button class="drop-button">Categories</button>
-    <button type="button" name="button"><a href="/transactions">Back</a></button>
-    <div class="dropdown-content">
-      <% @tag.each do |tag| %>
-        <a href="/transactions/sort-tag/<%= tag.name %>"><%= tag.name %></a>
-      <% end %>
-    </div>
+<div class="menus">
+<div class="dropdown">
+  <button class="dropbtn">Categories
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content">
+    <% @tag.each do |tag| %>
+      <a href="/transactions/sort-tag/<%= tag.name %>"><%= tag.name %></a>
+    <% end %>
+    <a href="/transactionssort-tag/">Back</a>
   </div>
+</div>
+</div>
 
 </div>
 
@@ -47,7 +54,7 @@
 <footer>
 <% if @transactions_total >= @user.budget %>
 <div class="warning">
-  <p>You have passed your specified budget!</p>
+  <p>You have spent your specified budget!</p>
 </div>
 <% end %>
 </footer>

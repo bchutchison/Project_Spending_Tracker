@@ -1,15 +1,25 @@
 header p {
   color: white;
   float: left;
+  font-weight: 900;
   color: rgb(000,000,000,0.8);
   font-size: 30px;
-  padding-left: 20px;
+  letter-spacing: 0.3em;
   padding-right: 20px;
   font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
-.icon a {
+.icon {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding-right: 10px;
+}
+
+.icon img {
   padding-bottom: 10px;
+
+
 }
 
 .navbar {
@@ -18,19 +28,20 @@ header p {
   font-family: 'Trebuchet MS', Helvetica, sans-serif;
   max-width: 100%;
   min-width: 1000px;
-
+  font-weight: 900;
 }
 
 .navbar a {
   float: left;
-  font-size: 16px;
   color: rgb(000,000,000,0.8);
   text-align: center;
   padding: 14px 16px;
+  letter-spacing: 0.2em;
   text-decoration: none;
   padding-top: 40px;
   padding-left: 20px;
   font-size: 18px;
+  line-height: 20px;
 }
 
 .dropdown {
@@ -39,6 +50,8 @@ header p {
 }
 
 .dropdown .dropbtn {
+  letter-spacing: 0.2em;
+  font-weight: 900;
   font-size: 18px;
   border: none;
   outline: none;
@@ -72,6 +85,7 @@ header p {
   text-decoration: none;
   display: block;
   text-align: left;
+    font-size: 14px;
 }
 
 .dropdown-content a:hover {

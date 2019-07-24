@@ -1,10 +1,13 @@
+<h2>All Transactions</h2>
+
+<div style="overflow-x:auto">
 
 <table>
   <div class="table">
 <tr>
   <th>Merchant</th>
   <th>Category</th>
-  <th>Transaction Value</th>
+  <th>Value</th>
   <th>Purchase Date</th>
   <th>Receipt</th>
   <th>Detail</th>
@@ -21,8 +24,10 @@
 
   <% end %>
     </div>
+    <br>
 </table>
 
+</div>
 
 <div class="total-spend">
 <p>Total Spending YTD : <%= "£#{@transactions_total}" %></p>
@@ -31,7 +36,7 @@
 <footer>
 <% if @transactions_total >= @user.budget %>
 <div class="warning">
-  <p>You have passed your specified budget!</p>
+  <p>You have spent your specified budget!</p>
 </div>
 <% end %>
 </footer>
