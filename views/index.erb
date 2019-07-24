@@ -4,12 +4,10 @@
 <p>Your current budget is: <%= "£#{@user.budget}" %></p>
 
 
-<div class="edit">
-  <div class="button_element">
+  <div class="edit">
     <p>Update your budget:
 
-      <button type="button" name="button"><a href="/<%= @user.id %>/new-budget">Edit</a></button></p>
-    </div>
+    <button type="button" name="button"><a href="/<%= @user.id %>/new-budget">Edit</a></button></p>
   </div>
 
 <div class="total-spend">

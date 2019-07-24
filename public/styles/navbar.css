@@ -16,20 +16,18 @@ header p {
   top: 0;
   right: 0;
   padding-right: 10px;
+  background: white;
 }
 
 .icon img {
   padding-bottom: 10px;
-
-
 }
 
 .navbar {
   overflow: hidden;
   background-color: white;
   font-family: 'Trebuchet MS', Helvetica, sans-serif;
-  max-width: 100%;
-  min-width: 1000px;
+  width: 100vw;
   font-weight: 900;
 }
 
@@ -37,7 +35,6 @@ header p {
   float: left;
   color: rgb(000,000,000,0.8);
   text-align: center;
-  padding: 14px 16px;
   letter-spacing: 0.2em;
   text-decoration: none;
   padding-top: 40px;

@@ -6,7 +6,6 @@ body {
   background: white url('/images/backdrop2.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
-  font-family: 'Merriweather', serif;
   padding: 0px;
   margin: 0px;
   position: fixed;
@@ -58,7 +57,7 @@ tr:hover {background-color: #f5f5f5;}
   color: red;
   font-size: 20px;
   text-align: left;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.2em;
   padding: 30px;
   font-family: 'Trebuchet MS', Helvetica, sans-serif;
   max-width: 100%;
@@ -94,6 +93,10 @@ tr:hover {background-color: #f5f5f5;}
     border: 1px;
     font-family: 'Trebuchet MS', Helvetica, sans-serif;
     color: rgb(000,000,000,0.8);
+}
+
+.edit p {
+
 }
 
 
@@ -136,16 +139,30 @@ select {
   font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
+.flex_container {
+  display: flex;
+}
 
-input[type=button], input[type=submit] {
-    background-color: red;
+.button_element {
     border: none;
+    display: inline-block;
+    text-align: center;
     color: white;
     padding: 16px 32px;
     border-radius: 4px;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
-    width: 30%;
+    width: 150px;
     margin-left: 20px;
-  }
+    font-size: 0.85rem;
+    box-sizing: border-box;
+}
+
+.button_orange {
+  background-color: orange;
+}
+
+.button_red {
+  background-color: red;
+}
