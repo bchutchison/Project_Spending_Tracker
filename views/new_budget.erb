@@ -14,3 +14,11 @@
 
 </div>
 </form>
+
+<footer>
+<% if @transactions_total >= @user.budget %>
+<div class="warning">
+  <p>You have spent your specified budget!</p>
+</div>
+<% end %>
+</footer>

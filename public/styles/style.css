@@ -9,6 +9,7 @@ body {
   font-family: 'Merriweather', serif;
   padding: 0px;
   margin: 0px;
+  position: fixed;
 }
 
 h2 {
@@ -95,6 +96,56 @@ tr:hover {background-color: #f5f5f5;}
     color: rgb(000,000,000,0.8);
 }
 
-form {
 
+
+/* form formatting */
+
+form {
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
+
+input {
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  width: 100%;
+  padding: 10px;
+}
+
+input[type=text] {
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  width: 30%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+input[type=date] {
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  width: 30%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+select {
+  width: 30%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+}
+
+
+input[type=button], input[type=submit] {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 30%;
+    margin-left: 20px;
+  }
